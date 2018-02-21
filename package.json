@@ -1,0 +1,23 @@
+{
+  "name": "help-wanted",
+  "version": "0.0.1",
+  "description": "search dependancies for help-wanted",
+  "keywords": [
+    "github",
+    "help",
+    "contribute"
+  ],
+  "author": "Andrew Gallagher <kivlor@gmail.com>",
+  "license": "ISC",
+  "main": "lib/search.js",
+  "bin": {
+    "helpwanted": "./lib/cli.js"
+  },
+  "scripts": {
+    "prepublish": "coffee --bare -o lib/ -c src/ && echo \"#!/usr/bin/env node\n$(cat lib/cli.js)\" > lib/cli.js && chmod +x lib/cli.js",
+    "test": "echo \"no tests\""
+  },
+  "devDependencies": {
+    "coffeescript": "^2.2.1"
+  }
+}
